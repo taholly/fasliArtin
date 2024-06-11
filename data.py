@@ -3,7 +3,6 @@ import streamlit as st
 import pandas as pd
 # توابع
 def load_excel_file(file_name):
-    def load_excel_file(file_name):
     try:
         DATA_FILENAME = Path(__file__).parent/f'{file_name}.xlsx'
         data = pd.read_excel(DATA_FILENAME)
