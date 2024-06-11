@@ -4,7 +4,8 @@ import pandas as pd
 def load_excel_file(file_name):
     def load_excel_file(file_name):
     try:
-        data = pd.read_excel(f"{file_name}.xlsx")
+        DATA_FILENAME = Path(__file__).parent/f'{file_name}.xlsx'
+        data = pd.read_excel(DATA_FILENAME)
         return data  # اینجا اضافه شود
     except Exception as e:
         st.error(f"Error loading file: {e}")
