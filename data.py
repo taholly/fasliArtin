@@ -13,7 +13,7 @@ def load_excel_file(file_name):
 def main():
     
     # فرم ورودی برای انتخاب نام فایل
-    file_name = st.text_input("نام نماد را وارد کنید:") + '.xlsx'
+    file_name = st.text_input("نام نماد را وارد کنید:")
     
     st.title(f"{file_name}")
 
