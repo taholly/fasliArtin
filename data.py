@@ -1,19 +1,10 @@
-#!/usr/bin/env python
-# coding: utf-8
-# %%
+
 import streamlit as st
 import pandas as pd
-import os
-
-
-# %%
-
 # توابع
-def load_excel_file(file_path, file_name):
+def load_excel_file(file_name):
     try:
-        full_path = os.path.join(file_path, file_name)
-        data = pd.read_excel(full_path)
-        return data
+        data = pd.read_excel(f"{file_name}.xlsx")
     except Exception as e:
         st.error(f"Error loading file: {e}")
 
@@ -26,11 +17,11 @@ def main():
     
     st.title(f"{file_name}")
 
-    file_path = "D:\\codal\\fasli\\"
+
     
     if st.button("View Excel"):
         if file_name:
-            data = load_excel_file(file_path=file_path,file_name=file_name)
+            data = load_excel_file(file_name)
             if data is not None:
                 st.write("### Data:")
                 st.dataframe(data)
@@ -39,7 +30,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
-# %%
