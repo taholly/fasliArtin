@@ -2,11 +2,12 @@ import streamlit as st
 import pandas as pd
 # توابع
 def load_excel_file(file_name):
+    def load_excel_file(file_name):
     try:
         data = pd.read_excel(f"{file_name}.xlsx")
+        return data  # اینجا اضافه شود
     except Exception as e:
         st.error(f"Error loading file: {e}")
-
 
 # صفحه اصلی
 def main():
